@@ -1,0 +1,22 @@
+{
+  "name": "web-rsa-blind-signatures",
+  "version": "1.0.0",
+  "description": "An RSA Blind Signatures example in pure Node.js and vanilla browser JavaScript",
+  "main": "server.js",
+  "scripts": {
+    "run": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamedwr/web-rsa-blind-signatures.git"
+  },
+  "author": "Mohamed Waleed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mohamedwr/web-rsa-blind-signatures/issues"
+  },
+  "homepage": "https://github.com/mohamedwr/web-rsa-blind-signatures#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
