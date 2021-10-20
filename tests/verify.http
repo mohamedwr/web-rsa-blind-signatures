@@ -1,0 +1,22 @@
+
+# @name signature
+POST http://localhost:8080/sign
+Content-Type: application/json
+
+{
+  "m": "test"
+}
+
+###
+
+@s = {{signature.response.body.*}}
+
+###
+
+POST http://localhost:8080/verify
+Content-Type: application/json
+
+{
+  "m": "test",
+  "signature": "{{s}}"
+}

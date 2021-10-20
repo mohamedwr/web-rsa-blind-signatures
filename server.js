@@ -1,7 +1,7 @@
 
 const express = require("express");
 const app = new express();
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 
 const crypto = require("crypto");
 
@@ -25,11 +25,16 @@ app.post("/sign", (req, res) => {
   res.end(crypto.sign("sha256", Buffer.from(req.body.m), {
     key: keys.privateKey,
     padding: crypto.constants.RSA_PKCS1_PSS_PADDING,
-  }).toString('base64'));
+  }).toString("base64"));
 });
 
 app.post("/verify", (req, res) => {
-
+  res.json({
+    status: crypto.verify("sha256", Buffer.from(req.body.m), {
+      key: keys.publicKey,
+      padding: crypto.constants.RSA_PKCS1_PSS_PADDING,
+    }, Buffer.from(req.body.signature, "base64"))
+  });
 });
 
 
